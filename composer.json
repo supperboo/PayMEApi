@@ -7,7 +7,6 @@
       }
    ],
    "minimum-stability": "dev",
-   "version": "1.0.0",
    "description": "Security Call Api PayME",
    "type": "library",
    "autoload": {},
