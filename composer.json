@@ -11,7 +11,8 @@
    "type": "library",
    "autoload": {},
    "require": {
-      "php": ">=5.3.0",
-      "minimum-stability": "dev"
-   }
+      "payme/api": "^1.0",
+      "php": ">=5.3.0"
+   },
+   "minimum-stability": "dev"
 }
