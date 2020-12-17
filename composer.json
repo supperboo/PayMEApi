@@ -6,6 +6,7 @@
          "email": "phanminhtri1441@gmail.com"
       }
    ],
+   "version": "^v1.0",
    "description": "Security Call Api PayME",
    "type": "library",
    "autoload": {},
