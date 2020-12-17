@@ -18,6 +18,12 @@
    "require-dev": {
       "php": ">=5.3.0"
    },
+   "repositories": [
+      {
+         "type": "vcs",
+         "url": "https://github.com/phpseclib/phpseclib/tree/master/phpseclib"
+      }
+   ],
    "version": "1.0.0",
    "minimum-stability": "dev",
    "license": "MIT"
