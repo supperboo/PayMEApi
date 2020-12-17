@@ -1,5 +1,5 @@
 {
-   "name": "payme/paymeapi",
+   "name": "payme/api",
    "version": "^1.0@dev",
    "php": ">=5.3.0",
    "description": "Security Call Api PayME",
