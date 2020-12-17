@@ -19,6 +19,5 @@
       "payme/api": "^1.0",
       "php": ">=5.3.0"
    },
-   "license": "MIT",
-   "prefer-stable": true
+   "license": "MIT"
 }
