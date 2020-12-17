@@ -7,16 +7,16 @@
       }
    ],
    "minimum-stability": "dev",
-   "version": "^1.0",
+   "version": "1.0.0",
    "description": "Security Call Api PayME",
    "type": "library",
    "autoload": {},
    "require": {
-      "payme/api": "^1.0",
+      "payme/api": "^1.0.0",
       "php": ">=5.3.0"
    },
    "require-dev": {
-      "payme/api": "^1.0",
+      "payme/api": "^1.0.0",
       "php": ">=5.3.0"
    },
    "license": "MIT"
