@@ -6,10 +6,11 @@
          "email": "phanminhtri1441@gmail.com"
       }
    ],
-   "minimum-stability": "dev",
    "description": "Security Call Api PayME",
    "type": "library",
-   "autoload": {},
+   "autoload": {
+      "files": "ApiService.php"
+   },
    "require": {
       "payme/api": "^1.0.0",
       "php": ">=5.3.0"
@@ -18,5 +19,7 @@
       "payme/api": "^1.0.0",
       "php": ">=5.3.0"
    },
+   "version": "1.0.0",
+   "minimum-stability": "dev",
    "license": "MIT"
 }
