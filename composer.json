@@ -4,5 +4,7 @@
    "php": ">=5.3.0",
    "description": "Security Call Api PayME",
    "type": "library",
-   "license": "PayME"
+   "license": "PayME",
+   "minimum-stability": "dev",
+   "prefer-stable": true
 }
