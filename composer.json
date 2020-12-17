@@ -1,9 +1,17 @@
 {
    "name": "payme/api",
-   "version": "^1.0@dev",
+ 
    "php": ">=5.3.0",
+   "authors": [
+      {
+         "name": "Phan Minh Tri",
+         "email": "phanminhtri1441@gmail.com"
+      }
+   ],
    "description": "Security Call Api PayME",
    "type": "library",
-   "minimum-stability": "dev",
-   "prefer-stable": true
+   "autoload": {},
+   "require": {},
+   "license": "PayME",
+   "minimum-stability": "dev"
 }
