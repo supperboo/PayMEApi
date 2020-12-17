@@ -1,6 +1,5 @@
 {
    "name": "payme/api",
- 
    "php": ">=5.3.0",
    "authors": [
       {
@@ -12,6 +11,5 @@
    "type": "library",
    "autoload": {},
    "require": {},
-   "license": "PayME",
    "minimum-stability": "dev"
 }
