@@ -1,6 +1,5 @@
 {
    "name": "payme/api",
-   "php": ">=5.3.0",
    "authors": [
       {
          "name": "Phan Minh Tri",
