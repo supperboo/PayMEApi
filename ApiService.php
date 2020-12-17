@@ -1,6 +1,6 @@
  <?php
-  include 'vendor/phpseclib/phpseclib/phpseclib/Crypt/RSA.php';
-  include 'vendor/phpseclib/phpseclib/phpseclib/Crypt/AES.php';
+  include 'Crypt/RSA.php';
+  include 'Crypt/CryptoJSAES.php';
   /**
    * isSecurity : on/off security
    * 
