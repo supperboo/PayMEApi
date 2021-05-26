@@ -7,13 +7,14 @@
    */
   class ApiService
   {
-    public function __construct($isSecurity = false, $domain = '', $privateKey = '', $publicKey = '', $accessToken = '')
+    public function __construct($isSecurity = false, $domain = '', $privateKey = '', $publicKey = '', $accessToken = '', $appId)
     {
       $this->isSecurity = $isSecurity;
       $this->domain = $domain;
       $this->privateKey = $privateKey;
       $this->accessToken = $accessToken;
       $this->publicKey = $publicKey;
+      $this->appId = $appId;
     }
     public function PayMEApi($url, $method = 'POST', $payload = [])
     {
@@ -46,11 +47,10 @@
       $response = curl_exec($curl);
       $header_size = curl_getinfo($curl, CURLINFO_HEADER_SIZE);
       $body = substr($response, $header_size);
-
       return $body;
     }
 
-    private function RequestSecurity($url, $method = 'POST', $payload = [])
+    private function RequestSecurity($url, $method = 'POST', $payload =[])
     {
       $encryptKey = rand(10000000, 99999999);
       $rsa = new Crypt_RSA();
@@ -62,14 +62,15 @@
         'publicKey' => $this->privateKey,
         'privateKey' => $this->privateKey,
         'isSecurity' => true,
-        'x-api-client' => 'app'
+        'x-api-client' =>  $this->appId
       ];
-
+      $xApiMessage = '';
       $xApiAction = CryptoJSAES::encrypt($config['url'], $encryptKey);
-
-      $payloadString = json_encode($payload, JSON_FORCE_OBJECT);
-      if ($payloadString) {
-        $xApiMessage =  CryptoJSAES::encrypt($payloadString, $encryptKey);
+      if ($method !== 'GET') {
+        $payloadString = json_encode($payload, JSON_FORCE_OBJECT);
+        if ($payloadString) {
+          $xApiMessage =  CryptoJSAES::encrypt($payloadString, $encryptKey);
+        }
       }
 
       $objValidate = [
@@ -95,7 +96,7 @@
         CURLOPT_POSTFIELDS => "{\"x-api-message\": \"" . $xApiMessage . "\" }",
         CURLOPT_HTTPHEADER => array(
           "Authorization: " . $objValidate['accessToken'],
-          "x-api-client: app",
+          "x-api-client: " .  $this->appId,
           "x-api-key: " . $xAPIKey,
           "x-api-validate: " . $xAPIValidate,
           "x-api-action: " . $xApiAction,
@@ -126,7 +127,7 @@
       $xAPIValidate = !empty($headers['x-api-validate']) ? $headers['x-api-validate'] : '';
       $xApiAction = !empty($headers['x-api-action']) ? $headers['x-api-action'] : '';
       $xAPIMessage = json_decode($body, true)['x-api-message'];
-      return $this->decryptResponse('POST', $xAPIKey, $xAPIMessage, $xAPIValidate, $objValidate['accessToken'], $this->privateKey, $xApiAction);
+      return $this->decryptResponse($method, $xAPIKey, $xAPIMessage, $xAPIValidate, $objValidate['accessToken'], $this->privateKey, $xApiAction);
     }
     private function decryptResponse($method, $xAPIKey, $xAPIMessage, $xAPIValidate, $accessToken, $privateKey, $xAPIAction)
     {
