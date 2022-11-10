@@ -2,7 +2,7 @@
   include 'Crypt/RSA.php';
   include 'Crypt/CryptoJSAES.php';
   /**
-   * isSecurity : on/off security
+   * isSecurity : on/off security 3
    * 
    */
   class ApiService
