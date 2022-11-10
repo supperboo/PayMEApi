@@ -1,8 +1,5 @@
 {
    "name": "payme/api",
-   "version": "1.0.1",
-   "minimum-stability": "dev",
-   "license": "MIT",
    "authors": [
       {
          "name": "Phan Minh Tri",
