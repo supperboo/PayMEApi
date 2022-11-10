@@ -12,7 +12,7 @@
    "description": "Security Call Api PayME",
    "type": "library",
    "autoload": {
-      "files": "ApiService.php"
+      "files": "ApiService.php2"
    },
    "require": {
       "payme/api": "@dev",
